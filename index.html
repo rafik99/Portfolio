@@ -56,4 +56,223 @@
   <!-- About -->
   <section id="about" class="py-20 bg-gray-50 px-6">
     <div class="container mx-auto text-center max-w-3xl">
-      <h3 class="text-3xl font-bold mb-6">About M
+      <h3 class="text-3xl font-bold mb-6">About Me</h3>
+      <p class="text-gray-600 leading-relaxed">
+        I am a Computer Science Engineering graduate (2024) with a strong interest in both Data Analytics and Technology.  
+        With skills in SQL, Python, Excel, and Power BI, I enjoy working with data to uncover insights, create dashboards, and support business decision-making.  
+        <br><br>
+        Alongside analytics, I also have 1.5 years of hands-on experience in WordPress development, where I contributed to building and customizing websites, improving user experiences, and solving technical challenges.  
+        <br><br>
+        I am a continuous learner with a problem-solving mindset, eager to apply my skills in data and technology to real-world projects.  
+        My goal is to grow in a forward-looking organization where I can contribute to impactful solutions and advance my career in the tech domain.  
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-20 px-6">
+    <div class="container mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-10">Skills</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+        <div class="p-6 border rounded-lg shadow hover:shadow-lg">Python</div>
+        <div class="p-6 border rounded-lg shadow hover:shadow-lg">SQL</div>
+        <div class="p-6 border rounded-lg shadow hover:shadow-lg">Power BI</div>
+        <div class="p-6 border rounded-lg shadow hover:shadow-lg">HTML/CSS</div>
+        <div class="p-6 border rounded-lg shadow hover:shadow-lg">C/C++</div>
+        <div class="p-6 border rounded-lg shadow hover:shadow-lg">Data Structures</div>
+        <div class="p-6 border rounded-lg shadow hover:shadow-lg">WordPress</div>
+        <div class="p-6 border rounded-lg shadow hover:shadow-lg">Cloud Computing</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-20 bg-gray-50 px-6">
+    <div class="container mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-10">Projects</h3>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Project Card -->
+        <div class="bg-white border rounded-lg shadow hover:shadow-xl p-6 text-left">
+          <h4 class="text-xl font-semibold mb-2">Linkedin Job Postings Analysis</h4>
+          <p class="text-gray-600 mb-4">
+            This project is an end-to-end data analytics case study built on a dataset of LinkedIn job postings (2023–2024). It demonstrates the complete data analysis workflow.
+          </p>
+          <a href="https://github.com/rafik99/Linkedin_Job_Postings_Analysis-/blob/main/Linkedln_job_Postings_Analytics_2023-24_PROJECT%20(1).ipynb" target="_blank" class="text-blue-500 hover:underline">View Code</a> |
+          <a href="https://github.com/rafik99/Linkedin_Job_Postings_Analysis" target="_blank" class="text-blue-500 hover:underline">Live Demo</a>
+        </div>
+
+        <!-- Project Card -->
+        <div class="bg-white border rounded-lg shadow hover:shadow-xl p-6 text-left">
+          <h4 class="text-xl font-semibold mb-2">Fitness Business Performance</h4>
+          <p class="text-gray-600 mb-4">
+            This project analyzes fitness business data using Power BI to uncover insights into revenue, expenses, user growth, and profitability.
+          </p>
+          <a href="https://github.com/rafik99/Fitness-Business-Performance/blob/main/Fitness%20BI%20_Project.pbix" target="_blank" class="text-blue-500 hover:underline">View Code</a> |
+          <a href="https://github.com/rafik99/Fitness-Business-Performance/" target="_blank" class="text-blue-500 hover:underline">Live Demo</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume" class="py-20 px-6">
+    <div class="container mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-6">Resume</h3>
+      <p class="mb-6 text-gray-600">You can view or download my resume below.</p>
+      <a href="[Resume Link]" target="_blank" class="px-6 py-3 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">Download Resume</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-gray-50 px-6">
+    <div class="container mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-6">Contact</h3>
+      <p class="text-gray-600 mb-4">Feel free to reach out to me via email or connect with me on LinkedIn/GitHub.</p>
+      <div class="space-x-6">
+        <a href="mailto:rafikmahammd4@gmail.com" class="text-blue-500 hover:underline">Email</a>
+        <a href="https://www.linkedin.com/in/mahammad-rafik-219623202/" target="_blank" class="text-blue-500 hover:underline">LinkedIn</a>
+        <a href="https://github.com/rafik99" target="_blank" class="text-blue-500 hover:underline">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-gray-500 border-t">
+    © Mahammad Rafik - All Rights Reserved
+  </footer>
+
+  <!-- Background Bubble/Lines Script -->
+  <script>
+    const bgCanvas = document.getElementById("bg-canvas");
+    const bgCtx = bgCanvas.getContext("2d");
+    bgCanvas.width = window.innerWidth;
+    bgCanvas.height = window.innerHeight;
+
+    let nodes = [];
+    const colors = ["#ff4d6d","#4dabf7","#38d9a9","#ffd43b","#9775fa"];
+
+    class Node {
+      constructor() {
+        this.x = Math.random() * bgCanvas.width;
+        this.y = Math.random() * bgCanvas.height;
+        this.vx = (Math.random() - 0.5) * 1.2;
+        this.vy = (Math.random() - 0.5) * 1.2;
+        this.radius = Math.random() * 4 + 2;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if(this.x < 0 || this.x > bgCanvas.width) this.vx *= -1;
+        if(this.y < 0 || this.y > bgCanvas.height) this.vy *= -1;
+      }
+      draw() {
+        bgCtx.beginPath();
+        bgCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        bgCtx.fillStyle = this.color;
+        bgCtx.fill();
+      }
+    }
+
+    function connectNodes() {
+      for(let i=0;i<nodes.length;i++) {
+        for(let j=i+1;j<nodes.length;j++) {
+          let dx = nodes[i].x - nodes[j].x;
+          let dy = nodes[i].y - nodes[j].y;
+          let dist = Math.sqrt(dx*dx + dy*dy);
+          if(dist < 120) {
+            bgCtx.beginPath();
+            bgCtx.strokeStyle = "rgba(150,150,150,0.2)";
+            bgCtx.moveTo(nodes[i].x, nodes[i].y);
+            bgCtx.lineTo(nodes[j].x, nodes[j].y);
+            bgCtx.stroke();
+          }
+        }
+      }
+    }
+
+    function animateBg() {
+      bgCtx.clearRect(0,0,bgCanvas.width,bgCanvas.height);
+      nodes.forEach(n => { n.update(); n.draw(); });
+      connectNodes();
+      requestAnimationFrame(animateBg);
+    }
+
+    for(let i=0;i<80;i++){ nodes.push(new Node()); }
+    animateBg();
+
+    window.addEventListener("resize", () => {
+      bgCanvas.width = window.innerWidth;
+      bgCanvas.height = window.innerHeight;
+    });
+  </script>
+
+  <!-- Cursor Animation Script -->
+  <script>
+    const canvas = document.getElementById("cursor-canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = [];
+
+    class Particle {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 8 + 2;
+        this.speedX = (Math.random() - 0.5) * 2;
+        this.speedY = (Math.random() - 0.5) * 2;
+        this.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        this.alpha = 1;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.alpha -= 0.02;
+      }
+      draw() {
+        ctx.globalAlpha = this.alpha;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    function handleParticles() {
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+        if (particles[i].alpha <= 0) {
+          particles.splice(i, 1);
+          i--;
+        }
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      handleParticles();
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener("mousemove", (e) => {
+      for (let i = 0; i < 5; i++) {
+        particles.push(new Particle(e.x, e.y));
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      bgCanvas.width = window.innerWidth;
+      bgCanvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
