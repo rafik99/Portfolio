@@ -4,7 +4,7 @@ Welcome to my personal portfolio website!
 This site showcases my **skills, projects, and experience** in **Data Analytics and Web Development**.
 
 ## 🔗 Live Demo
-👉 [View Portfolio](https://rafik99.github.io/)
+👉 [View Portfolio](https://rafik99.github.io/Portfolio/)
 
 ## 📌 About Me
 - 🎓 B.E. in Computer Science (2024)  
