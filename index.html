@@ -5,8 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Cursor Effect Canvas */
+    #cursor-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0; /* Behind everything */
+      pointer-events: none;
+    }
+    body > *:not(canvas) {
+      position: relative;
+      z-index: 1; /* Keep content above animation */
+    }
+  </style>
 </head>
 <body class="bg-white text-gray-800 scroll-smooth">
+
+  <!-- Cursor Animation Canvas -->
+  <canvas id="cursor-canvas"></canvas>
 
   <!-- Navbar -->
   <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
@@ -34,14 +53,15 @@
   <section id="about" class="py-20 bg-gray-50 px-6">
     <div class="container mx-auto text-center max-w-3xl">
       <h3 class="text-3xl font-bold mb-6">About Me</h3>
-      <p class="text-gray-600 leading-relaxed">I am a Computer Science Engineering graduate (2024) with a strong interest in both Data Analytics and Technology.  
-With skills in SQL, Python, Excel, and Power BI, I enjoy working with data to uncover insights, create dashboards, and support business decision-making.  
-
-Alongside analytics, I also have 1.5 years of hands-on experience in WordPress development, where I contributed to building and customizing websites, improving user experiences, and solving technical challenges.  
-
-I am a continuous learner with a problem-solving mindset, eager to apply my skills in data and technology to real-world projects.  
-My goal is to grow in a forward-looking organization where I can contribute to impactful solutions and advance my career in the tech domain.  
-</p>
+      <p class="text-gray-600 leading-relaxed">
+        I am a Computer Science Engineering graduate (2024) with a strong interest in both Data Analytics and Technology.  
+        With skills in SQL, Python, Excel, and Power BI, I enjoy working with data to uncover insights, create dashboards, and support business decision-making.  
+        <br><br>
+        Alongside analytics, I also have 1.5 years of hands-on experience in WordPress development, where I contributed to building and customizing websites, improving user experiences, and solving technical challenges.  
+        <br><br>
+        I am a continuous learner with a problem-solving mindset, eager to apply my skills in data and technology to real-world projects.  
+        My goal is to grow in a forward-looking organization where I can contribute to impactful solutions and advance my career in the tech domain.  
+      </p>
     </div>
   </section>
 
@@ -49,78 +69,3 @@ My goal is to grow in a forward-looking organization where I can contribute to i
   <section id="skills" class="py-20 px-6">
     <div class="container mx-auto text-center">
       <h3 class="text-3xl font-bold mb-10">Skills</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-        <div class="p-6 border rounded-lg shadow hover:shadow-lg">Python</div>
-        <div class="p-6 border rounded-lg shadow hover:shadow-lg">SQL</div>
-        <div class="p-6 border rounded-lg shadow hover:shadow-lg">Power BI</div>
-        <div class="p-6 border rounded-lg shadow hover:shadow-lg">HTM/CSS</div>
-        <div class="p-6 border rounded-lg shadow hover:shadow-lg">C/C++</div>
-        <div class="p-6 border rounded-lg shadow hover:shadow-lg">Data Structure</div>
-        <div class="p-6 border rounded-lg shadow hover:shadow-lg">Wordpress</div>
-        <div class="p-6 border rounded-lg shadow hover:shadow-lg">Cloud Computing</div>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="py-20 bg-gray-50 px-6">
-    <div class="container mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-10">Projects</h3>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Project Card -->
-        <div class="bg-white border rounded-lg shadow hover:shadow-xl p-6 text-left">
-          <h4 class="text-xl font-semibold mb-2">Linkedin Job Postings Analysis</h4>
-          <p class="text-gray-600 mb-4">This project is an end-to-end data analytics case study built on a dataset of LinkedIn job postings (2023–2024). It demonstrates the complete data analysis workflow:
-
-</p>
-          <a href="[https://github.com/rafik99/Linkedin_Job_Postings_Analysis-/blob/main/Linkedln_job_Postings_Analytics_2023-24_PROJECT%20(1).ipynb]" target="_blank" class="text-blue-500 hover:underline">View Code</a> |
-          <a href="[https://github.com/rafik99/Linkedin_Job_Postings_Analysis]" target="_blank" class="text-blue-500 hover:underline">Live Demo</a>
-        </div>
-
-         <!-- Project Card -->
-        <div class="bg-white border rounded-lg shadow hover:shadow-xl p-6 text-left">
-          <h4 class="text-xl font-semibold mb-2">Fitness Business Performance</h4>
-          <p class="text-gray-600 mb-4">This project analyzes fitness business data using Power BI to uncover insights into revenue, expenses, user growth, and profitability.
-
-</p>
-          <a href="[https://github.com/rafik99/Fitness-Business-Performance/blob/main/Fitness%20BI%20_Project.pbix]" target="_blank" class="text-blue-500 hover:underline">View Code</a> |
-          <a href="[https://github.com/rafik99/Fitness-Business-Performance/]" target="_blank" class="text-blue-500 hover:underline">Live Demo</a>
-        </div>
-
-        <!-- Duplicate above card for more projects -->
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Resume -->
-  <section id="resume" class="py-20 px-6">
-    <div class="container mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-6">Resume</h3>
-      <p class="mb-6 text-gray-600">You can view or download my resume below.</p>
-      <a href="[Resume Link]" target="_blank" class="px-6 py-3 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">Download Resume</a>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-20 bg-gray-50 px-6">
-    <div class="container mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-6">Contact</h3>
-      <p class="text-gray-600 mb-4">Feel free to reach out to me via email or connect with me on LinkedIn/GitHub.</p>
-      <div class="space-x-6">
-        <a href="mailto:[rafikmahammd4@gmail.com]" class="text-blue-500 hover:underline">Email</a>
-        <a href="[https://www.linkedin.com/in/mahammad-rafik-219623202/]" target="_blank" class="text-blue-500 hover:underline">LinkedIn</a>
-        <a href="[https://github.com/rafik99]" target="_blank" class="text-blue-500 hover:underline">GitHub</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-6 text-center text-gray-500 border-t">
-    © [Mahammad Rafik] - All Rights Reserved
-  </footer>
-
-</body>
-</html>
