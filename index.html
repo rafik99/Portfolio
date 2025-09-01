@@ -1,206 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Cursor Effect Canvas */
-    #cursor-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0; /* Behind everything */
-      pointer-events: none;
-    }
-    body > *:not(canvas) {
-      position: relative;
-      z-index: 1; /* Keep content above animation */
-    }
-  </style>
-</head>
-<body class="bg-white text-gray-800 scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Mahammad Rafik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Three.js & Vanta.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js"></script>
 
-  <!-- Cursor Animation Canvas -->
-  <canvas id="cursor-canvas"></canvas>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      section {
+        min-height: 100vh;
+        padding: 4rem 2rem;
+      }
+      #vanta-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800 font-sans">
 
-  <!-- Navbar -->
-  <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
-    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-      <h1 class="text-xl font-bold">Mahammad Rafik</h1>
-      <ul class="flex space-x-6">
-        <li><a href="#home" class="hover:text-blue-500">Home</a></li>
-        <li><a href="#about" class="hover:text-blue-500">About</a></li>
-        <li><a href="#skills" class="hover:text-blue-500">Skills</a></li>
-        <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
-        <li><a href="#resume" class="hover:text-blue-500">Resume</a></li>
-        <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
-      </ul>
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+      <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+        <h1 class="text-xl font-bold">Mahammad Rafik</h1>
+        <ul class="flex space-x-6">
+          <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+          <li><a href="#about" class="hover:text-blue-500">About</a></li>
+          <li><a href="#skills" class="hover:text-blue-500">Skills</a></li>
+          <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+          <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+        </ul>
+      </div>
     </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-6">
-    <h2 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm Mahammad Rafik</h2>
-    <p class="text-lg md:text-xl text-gray-600 mb-6">Tech Enthusiast | Exploring Development & Data Analytics</p>
-    <a href="#projects" class="px-6 py-3 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">View My Work</a>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="relative flex flex-col justify-center items-center text-center text-white">
+      <div id="vanta-bg"></div>
+      <div class="relative z-10">
+        <h2 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm Mahammad Rafik</h2>
+        <p class="text-lg md:text-xl mb-6">Aspiring Tech Professional | Data Analytics & Development</p>
+        <a href="#projects" class="px-6 py-3 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">View My Work</a>
+      </div>
+    </section>
 
-  <!-- About -->
-  <section id="about" class="py-20 bg-gray-50 px-6">
-    <div class="container mx-auto text-center max-w-3xl">
-      <h3 class="text-3xl font-bold mb-6">About Me</h3>
-      <p class="text-gray-600 leading-relaxed">
-        I am a Computer Science Engineering graduate (2024) with a strong interest in both Data Analytics and Technology.  
-        With skills in SQL, Python, Excel, and Power BI, I enjoy working with data to uncover insights, create dashboards, and support business decision-making.  
-        <br><br>
-        Alongside analytics, I also have 1.5 years of hands-on experience in WordPress development, where I contributed to building and customizing websites, improving user experiences, and solving technical challenges.  
-        <br><br>
-        I am a continuous learner with a problem-solving mindset, eager to apply my skills in data and technology to real-world projects.  
-        My goal is to grow in a forward-looking organization where I can contribute to impactful solutions and advance my career in the tech domain.  
+    <!-- About -->
+    <section id="about" class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">About Me</h2>
+      <p class="text-lg leading-relaxed text-gray-600">
+        I am a Computer Science Engineering graduate (2024) with 1.5 years of experience in 
+        <span class="font-semibold">WordPress development</span> and a strong passion for 
+        <span class="font-semibold">data analytics and technology</span>.  
+        Skilled in SQL, Python, Excel, and Power BI, I enjoy working with data to extract insights 
+        and building solutions that support decision-making.  
+
+        With hands-on experience in creating dashboards, performing exploratory data analysis, and developing 
+        websites on WordPress, I bring both <span class="font-semibold">analytical</span> and 
+        <span class="font-semibold">development</span> skills to the table.  
+        I am a continuous learner with a problem-solving mindset, eager to contribute to 
+        impactful projects and grow within the tech industry.
       </p>
-    </div>
-  </section>
+    </section>
 
-  <!-- Skills -->
-  <section id="skills" class="py-20 px-6">
-    <div class="container mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-10">Skills</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-        <div class="p-6 border rounded-lg shadow hover:shadow-lg">Python</div>
-        <div class="p-6 border rounded-lg shadow hover:shadow-lg">SQL</div>
-        <div class="p-6 border rounded-lg shadow hover:shadow-lg">Power BI</div>
-        <div class="p-6 border rounded-lg shadow hover:shadow-lg">HTML/CSS</div>
-        <div class="p-6 border rounded-lg shadow hover:shadow-lg">C/C++</div>
-        <div class="p-6 border rounded-lg shadow hover:shadow-lg">Data Structures</div>
-        <div class="p-6 border rounded-lg shadow hover:shadow-lg">WordPress</div>
-        <div class="p-6 border rounded-lg shadow hover:shadow-lg">Cloud Computing</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="py-20 bg-gray-50 px-6">
-    <div class="container mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-10">Projects</h3>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Project Card -->
-        <div class="bg-white border rounded-lg shadow hover:shadow-xl p-6 text-left">
-          <h4 class="text-xl font-semibold mb-2">Linkedin Job Postings Analysis</h4>
-          <p class="text-gray-600 mb-4">
-            This project is an end-to-end data analytics case study built on a dataset of LinkedIn job postings (2023–2024). It demonstrates the complete data analysis workflow.
-          </p>
-          <a href="https://github.com/rafik99/Linkedin_Job_Postings_Analysis-/blob/main/Linkedln_job_Postings_Analytics_2023-24_PROJECT%20(1).ipynb" target="_blank" class="text-blue-500 hover:underline">View Code</a> |
-          <a href="https://github.com/rafik99/Linkedin_Job_Postings_Analysis" target="_blank" class="text-blue-500 hover:underline">Live Demo</a>
+    <!-- Skills -->
+    <section id="skills" class="bg-gray-50">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Skills</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div class="p-4 bg-white shadow rounded-lg">SQL</div>
+          <div class="p-4 bg-white shadow rounded-lg">Python</div>
+          <div class="p-4 bg-white shadow rounded-lg">Excel</div>
+          <div class="p-4 bg-white shadow rounded-lg">Power BI</div>
+          <div class="p-4 bg-white shadow rounded-lg">WordPress Development</div>
+          <div class="p-4 bg-white shadow rounded-lg">Problem Solving</div>
         </div>
+      </div>
+    </section>
 
-        <!-- Project Card -->
-        <div class="bg-white border rounded-lg shadow hover:shadow-xl p-6 text-left">
-          <h4 class="text-xl font-semibold mb-2">Fitness Business Performance</h4>
-          <p class="text-gray-600 mb-4">
-            This project analyzes fitness business data using Power BI to uncover insights into revenue, expenses, user growth, and profitability.
-          </p>
-          <a href="https://github.com/rafik99/Fitness-Business-Performance/blob/main/Fitness%20BI%20_Project.pbix" target="_blank" class="text-blue-500 hover:underline">View Code</a> |
-          <a href="https://github.com/rafik99/Fitness-Business-Performance/" target="_blank" class="text-blue-500 hover:underline">Live Demo</a>
+    <!-- Projects -->
+    <section id="projects" class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Projects</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 bg-white shadow rounded-lg">
+          <h3 class="font-bold mb-2">Data Analytics Dashboard</h3>
+          <p>Interactive dashboard built with Power BI to visualize key metrics and insights.</p>
         </div>
-
+        <div class="p-6 bg-white shadow rounded-lg">
+          <h3 class="font-bold mb-2">Job Market Analysis</h3>
+          <p>Exploratory Data Analysis on LinkedIn job postings dataset using Python and SQL.</p>
+        </div>
+        <div class="p-6 bg-white shadow rounded-lg">
+          <h3 class="font-bold mb-2">WordPress Website</h3>
+          <p>Developed a responsive website for a client with customized themes and plugins.</p>
+        </div>
+        <div class="p-6 bg-white shadow rounded-lg">
+          <h3 class="font-bold mb-2">Portfolio Project</h3>
+          <p>This portfolio site showcasing my skills, projects, and background.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Resume -->
-  <section id="resume" class="py-20 px-6">
-    <div class="container mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-6">Resume</h3>
-      <p class="mb-6 text-gray-600">You can view or download my resume below.</p>
-      <a href="[Resume Link]" target="_blank" class="px-6 py-3 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">Download Resume</a>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-20 bg-gray-50 px-6">
-    <div class="container mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-6">Contact</h3>
-      <p class="text-gray-600 mb-4">Feel free to reach out to me via email or connect with me on LinkedIn/GitHub.</p>
-      <div class="space-x-6">
-        <a href="mailto:rafikmahammd4@gmail.com" class="text-blue-500 hover:underline">Email</a>
-        <a href="https://www.linkedin.com/in/mahammad-rafik-219623202/" target="_blank" class="text-blue-500 hover:underline">LinkedIn</a>
-        <a href="https://github.com/rafik99" target="_blank" class="text-blue-500 hover:underline">GitHub</a>
+    <!-- Contact -->
+    <section id="contact" class="bg-gray-50">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Contact</h2>
+        <p class="text-lg text-gray-600 mb-4">
+          Feel free to connect with me via email or LinkedIn!
+        </p>
+        <div class="space-x-4">
+          <a href="mailto:rafik@example.com" class="px-6 py-3 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">Email Me</a>
+          <a href="https://www.linkedin.com/in/rafik99" target="_blank" class="px-6 py-3 bg-gray-800 text-white rounded-lg shadow hover:bg-gray-900">LinkedIn</a>
+          <a href="https://github.com/rafik99" target="_blank" class="px-6 py-3 bg-gray-700 text-white rounded-lg shadow hover:bg-gray-800">GitHub</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="py-6 text-center text-gray-500 border-t">
-    © Mahammad Rafik - All Rights Reserved
-  </footer>
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-white border-t">
+      <p class="text-gray-600">&copy; 2024 Mahammad Rafik. All rights reserved.</p>
+    </footer>
 
-  <!-- Cursor Animation Script -->
-  <script>
-    const canvas = document.getElementById("cursor-canvas");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    <!-- Vanta.js Init -->
+    <script>
+      VANTA.NET({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x3f83f8,
+        backgroundColor: 0x000000,
+        points: 12.00,
+        maxDistance: 25.00,
+        spacing: 18.00
+      })
+    </script>
 
-    let particles = [];
-
-    class Particle {
-      constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.size = Math.random() * 8 + 2;
-        this.speedX = (Math.random() - 0.5) * 2;
-        this.speedY = (Math.random() - 0.5) * 2;
-        this.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
-        this.alpha = 1;
-      }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        this.alpha -= 0.02;
-      }
-      draw() {
-        ctx.globalAlpha = this.alpha;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-        ctx.globalAlpha = 1;
-      }
-    }
-
-    function handleParticles() {
-      for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
-        if (particles[i].alpha <= 0) {
-          particles.splice(i, 1);
-          i--;
-        }
-      }
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      handleParticles();
-      requestAnimationFrame(animate);
-    }
-    animate();
-
-    window.addEventListener("mousemove", (e) => {
-      for (let i = 0; i < 5; i++) {
-        particles.push(new Particle(e.x, e.y));
-      }
-    });
-
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-  </script>
-</body>
+  </body>
 </html>
+
